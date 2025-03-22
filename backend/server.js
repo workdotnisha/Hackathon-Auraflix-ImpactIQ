@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT;
 const API_KEY = process.env.YOUTUBE_API_KEY;
 const mongoURI = process.env.MONGO_URI
 
