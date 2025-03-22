@@ -12,12 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+const API_BASE_URL = "https://hackathon-auraflix-impactiq.onrender.com"; 
+
 async function fetchRankings() {
     try {
         const rankingList = document.getElementById("rankingList");
         rankingList.innerHTML = "";
 
-        const response = await fetch("http://localhost:8080/rankings");
+        const response = await fetch(`${API_BASE_URL}/rankings`);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         let data = await response.json();
@@ -74,11 +76,10 @@ function addInfluencer() {
     if (spinner) spinner.style.display = "block";
 
     // Using the exact endpoint and payload structure from your original code
-    fetch("http://localhost:8080/add-influencer", {
+    fetch(`${API_BASE_URL}/add-influencer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, channelId }),
-        // mode: "cors"
     })
     .then(response => {
         if (!response.ok) {
