@@ -38,8 +38,7 @@ header {
   z-index: 100;
   transition: var(--transition);
   backdrop-filter: blur(8px);
-  /* background-color: rgba(15, 15, 26, 0.7); */
-  background-color: #02304775;
+  background-color: #0230479a;
 }
 
 header.scrolled {
